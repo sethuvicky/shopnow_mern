@@ -34,7 +34,7 @@ app.use('/api/v1', auth)
 app.use('/api/v1', order)
 app.use('/api/v1', payment)
 
-if (process.env.NODE_ENV === 'DEVELOPMENT') {
+if (process.env.NODE_ENV) {
     app.use(express.static(path.join(__dirname, "../frontend/build")))
 
     app.get('*', (req, res) => {
